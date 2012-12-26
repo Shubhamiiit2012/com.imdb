@@ -7,7 +7,16 @@ public enum Gender {
 	private Gender(int code){
 		this.code=code;
 	}
-	public Gender getGender(){
-		return this;
+	
+	public int getGenderCode(){
+		return code;
+	}
+	
+	public static Gender getGenderByCode(int code){
+		for(Gender g:Gender.values()){
+			if(g.code == code)
+				return g;
+		}
+		throw new IllegalArgumentException();
 	}
 }

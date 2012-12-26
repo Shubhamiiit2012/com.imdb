@@ -18,7 +18,7 @@ public class Movie {
 	
 	@Override
 	public String toString() {
-		System.out.println("Movie [name=" + name + ", year=" + year + ", Genres = " + printGenreList()+"]");
+		System.out.println("Movie name = " + name + ", year = " + year + ", Genres = " + printGenreList()+"]");
 		return "";
 	}
 
@@ -27,7 +27,7 @@ public class Movie {
 	private String printGenreList() {
 		String str = "";
 		for(Genre genre:genreList){
-			str=str+genre.getGenreByCode(genre.getCode())+" ";
+			str=str+Genre.getGenreByCode(genre.getCode())+" ";
 		}
 		return str;
 	}

@@ -10,7 +10,7 @@ public class MainClass {
 	 */
 	public static void main(String[] args) {
 		
-		MovieManager movieManager=new FileMovieManager("movie.data","ratings.data","genre.data","users.data");
+		MovieManager movieManager=new FileMovieManager("movie.data","ratings.data","genre.data","user.data");
 		//FileMovieManager("movie.data", "ratings.data", "", "");
 		
 		MovieBuff movieBuff=new MovieBuff(movieManager.getDatabase());

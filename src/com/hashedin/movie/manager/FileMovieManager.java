@@ -8,8 +8,7 @@ public class FileMovieManager implements MovieManager {
 	
 	
 	public FileMovieManager(String movieFile,String ratingsFile, String genreFile, String usersFile){
-		movieDatabase = new MovieDatabase(movieFile);
-		
+		movieDatabase = new MovieDatabase(movieFile, usersFile);		
 		
 	}
 	
