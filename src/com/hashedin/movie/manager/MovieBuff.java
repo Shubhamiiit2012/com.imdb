@@ -1,12 +1,21 @@
 package com.hashedin.movie.manager;
 
+import java.util.HashMap;
+
+import com.hashedin.movie.model.Movie;
 import com.hashedin.movie.model.MovieDatabase;
 
 public class MovieBuff {
 
 	public MovieBuff(MovieDatabase movieDb) {
-		movieDb.getMovieMap().get(1).toString();
-		movieDb.getMovieMap().get(2).toString();
+		HashMap<Integer, Movie> movieList = movieDb.getMovieMap();
+		
+		for(int i = 0; i<movieList.size(); i++){
+			if(movieList.containsKey(i))
+				movieList.get(i).toString();
+				
+		}
+		
 	}
 
 }

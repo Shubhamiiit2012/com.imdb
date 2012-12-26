@@ -27,7 +27,7 @@ public enum Genre {
 		this.code=code;
 	}
 	
-	public Genre getGenreByCode(int code) {
+	public static Genre getGenreByCode(int code) {
 		for(Genre g : Genre.values()) {
 			if(g.code == code) {
 				return g;
