@@ -27,8 +27,10 @@ public class FileMovieManager implements MovieManager {
 				.getMovieMap();
 		HashMap<Integer, User> userMap = new CreateUserMap(usersFile)
 				.getUserMap();
-		movieDatabase = new MovieDatabase(movieMap, userMap);// movieFile,
-																// usersFile);
+	//	List<Ratings> ratingList = new CreateRatingList(ratingsFile).getRatingList();
+		
+		movieDatabase = new MovieDatabase(movieMap, userMap);
+		
 		LOGGER.info("FileMovieManager has created database.");
 
 	}
