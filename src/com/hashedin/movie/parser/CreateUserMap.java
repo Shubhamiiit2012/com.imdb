@@ -5,10 +5,12 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
+import org.apache.log4j.Logger;
+
 import com.hashedin.movie.model.User;
 
 public class CreateUserMap {
-
+	public static final Logger LOGGER = Logger.getLogger(CreateUserMap.class);
 	HashMap<Integer, User> userMap = new HashMap<Integer, User>();
 
 	public CreateUserMap(String userFile) {
@@ -26,7 +28,7 @@ public class CreateUserMap {
 			fileInput = new FileInputStream(userFile);
 			bReader = new BufferedReader(new InputStreamReader(fileInput));
 			while ((str = bReader.readLine()) != null) {
-				System.out.println(str);
+				
 				String tokken[] = ParseStringClass.parseString(str, "[|]+");
 				userObject = new User(Integer.valueOf(tokken[0]),
 						Integer.valueOf(tokken[1]), Integer.valueOf(tokken[4]),
@@ -34,8 +36,9 @@ public class CreateUserMap {
 				userMap.put(Integer.valueOf(tokken[0]), userObject);
 			}
 		} catch (Exception e) {
-
+			LOGGER.error("File not Found or File is broken.");
 		}
+		LOGGER.info("User Map has been created.");
 	}
 
 	public HashMap<Integer, User> getUserMap() {

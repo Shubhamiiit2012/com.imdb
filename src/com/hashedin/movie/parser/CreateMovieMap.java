@@ -6,12 +6,16 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import org.apache.log4j.Logger;
+
 import com.hashedin.movie.model.Genre;
 import com.hashedin.movie.model.Movie;
 
 public class CreateMovieMap {
 
 	private HashMap<Integer, Movie> movieMap=new HashMap<Integer, Movie>();
+	public static final Logger LOGGER = Logger.getLogger(CreateMovieMap.class);
 	
 	public CreateMovieMap(String fileName){
 		createMovieMap(fileName);
@@ -36,7 +40,7 @@ public class CreateMovieMap {
 				List<Genre> genreList = new ArrayList<Genre>();
 
 				if (tokken.length != 25) {
-					System.out.println("Line " + tokken[0]
+					LOGGER.error("Line " + tokken[0]
 							+ " can't be parsed. ");
 				} else {
 
@@ -57,7 +61,7 @@ public class CreateMovieMap {
 			fileInput.close();
 			bReader.close();
 		} catch (Exception e) {
-
+			LOGGER.error("movie.data not found.");
 		}
 
 	}

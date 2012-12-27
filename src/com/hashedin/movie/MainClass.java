@@ -16,6 +16,7 @@ public class MainClass {
 		MovieManager movieManager=new FileMovieManager("movie.data","ratings.data","genre.data","user.data");
 		
 		MovieBuff movieBuff=new MovieBuff(movieManager.getDatabase());
+		movieBuff.showOutput();
 		
 		LOGGER.info("Your Code Runs.");
 	}

@@ -2,12 +2,14 @@ package com.hashedin.movie.manager;
 
 import java.util.HashMap;
 
+import org.apache.log4j.Logger;
+
 import com.hashedin.movie.model.Movie;
 import com.hashedin.movie.model.MovieDatabase;
 import com.hashedin.movie.model.User;
 
 public class MovieBuff {
-
+	public static final Logger LOGGER = Logger.getLogger(MovieBuff.class);
 	HashMap<Integer, Movie> movieMap = null;
 	HashMap<Integer, User> userMap=null;
 	
@@ -15,7 +17,7 @@ public class MovieBuff {
 		movieMap = movieDb.getMovieMap();
 		userMap=movieDb.getUserMap();
 		//System.out.println(movieMap.get(1).toString());
-		for(int i = 0; i<movieMap.size(); i++){
+		/*for(int i = 0; i<movieMap.size(); i++){
 			if(movieMap.containsKey(i))
 				System.out.println(movieMap.get(i).toString());
 				
@@ -24,8 +26,8 @@ public class MovieBuff {
 			if(userMap.containsKey(i))
 				System.out.println(userMap.get(i).toString());
 				
-		}
-		
+		}*/
+		LOGGER.info("MovieBuff has completed.");
 		
 	}
 
