@@ -9,6 +9,12 @@ import org.apache.log4j.Logger;
 
 import com.hashedin.movie.model.User;
 
+/**
+ * This class contains the actual function to create the Map of user.
+ * This map is returned using getUserMap().
+ *
+ */
+
 public class CreateUserMap {
 	public static final Logger LOGGER = Logger.getLogger(CreateUserMap.class);
 	HashMap<Integer, User> userMap = new HashMap<Integer, User>();
@@ -35,8 +41,12 @@ public class CreateUserMap {
 						tokken[2], tokken[3]);
 				userMap.put(Integer.valueOf(tokken[0]), userObject);
 			}
+			bReader.close();
+			fileInput.close();
 		} catch (Exception e) {
 			LOGGER.error("File not Found or File is broken.");
+		} finally {
+			//Problem here.			
 		}
 		LOGGER.info("User Map has been created.");
 	}

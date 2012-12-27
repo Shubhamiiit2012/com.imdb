@@ -3,6 +3,9 @@ package com.hashedin.movie.model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This is the structure of movie object.
+ */
 public class Movie {
 	private String name;
 	private int year;

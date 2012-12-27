@@ -12,6 +12,11 @@ import org.apache.log4j.Logger;
 import com.hashedin.movie.model.Genre;
 import com.hashedin.movie.model.Movie;
 
+/**
+ * This class contains the actual function to create the Map of movie.
+ * This map is returned using getMovieMap().
+ *
+ */
 public class CreateMovieMap {
 
 	private HashMap<Integer, Movie> movieMap=new HashMap<Integer, Movie>();

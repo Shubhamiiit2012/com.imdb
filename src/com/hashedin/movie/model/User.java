@@ -2,6 +2,9 @@ package com.hashedin.movie.model;
 
 import com.hashedin.movie.support.Gender;
 
+/**
+ * This is the structure of user object.
+ */
 public class User {
 	private int id;
 	private int age;
