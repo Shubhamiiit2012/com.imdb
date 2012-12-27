@@ -1,7 +1,6 @@
 package com.hashedin.movie.manager;
 
 import java.util.HashMap;
-import javax.jws.soap.SOAPBinding.Use;
 
 import com.hashedin.movie.model.Movie;
 import com.hashedin.movie.model.MovieDatabase;
@@ -9,13 +8,16 @@ import com.hashedin.movie.model.User;
 
 public class MovieBuff {
 
-	public MovieBuff(MovieDatabase movieDb) {
-		HashMap<Integer, Movie> movieMap = movieDb.getMovieMap();
-		HashMap<Integer, User> userMap=movieDb.getUserMap();
-		
+	HashMap<Integer, Movie> movieMap = null;
+	HashMap<Integer, User> userMap=null;
+	
+	public MovieBuff(MovieDatabase movieDb) throws NullPointerException {
+		movieMap = movieDb.getMovieMap();
+		userMap=movieDb.getUserMap();
+		//System.out.println(movieMap.get(1).toString());
 		for(int i = 0; i<movieMap.size(); i++){
 			if(movieMap.containsKey(i))
-				movieMap.get(i).toString();
+				System.out.println(movieMap.get(i).toString());
 				
 		}
 		for(int i = 0; i<userMap.size(); i++){
@@ -24,6 +26,10 @@ public class MovieBuff {
 				
 		}
 		
+		
 	}
 
+	public String showOutput(){
+		return movieMap.get(1).toString();
+	}
 }

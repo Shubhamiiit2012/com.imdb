@@ -1,6 +1,8 @@
 
 package com.hashedin.movie;
 
+import org.apache.log4j.Logger;
+
 import com.hashedin.movie.manager.*;
 
 public class MainClass {
@@ -8,15 +10,14 @@ public class MainClass {
 	/**
 	 * @param args
 	 */
+	public static final Logger LOGGER = Logger.getLogger(MainClass.class);
 	public static void main(String[] args) {
 		
 		MovieManager movieManager=new FileMovieManager("movie.data","ratings.data","genre.data","user.data");
-		//FileMovieManager("movie.data", "ratings.data", "", "");
 		
 		MovieBuff movieBuff=new MovieBuff(movieManager.getDatabase());
 		
-		System.out.println("It runs.");
-		
+		LOGGER.info("Your Code Runs.");
 	}
 
 }
